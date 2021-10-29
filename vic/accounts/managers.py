@@ -21,5 +21,5 @@ class CustomUserManager(BaseUserManager):
                 extra_fields.setdefault('is_superuser', True)
 
                 if extra_fields.get('is_staff') is not True:
-                    raise ValueError('Superuser must have staff priviledges')
+                        raise ValueError('Superuser must have staff priviledges')
                 return self._create_user(name, username, email, password, **extra_fields)

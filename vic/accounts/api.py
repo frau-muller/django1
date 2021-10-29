@@ -14,8 +14,8 @@ class LoginAPI(generics.GenericAPIView):
 			user = serializer.validated_data
 
 			return Response({
-				'user': UserSerializer(user).data,
-				'token': AuthToken.objects.create(user)[1]
+					'user': UserSerializer(user).data,
+					'token': AuthToken.objects.create(user)[1]
 			})
 
 
@@ -29,8 +29,8 @@ class RegisterAPI(generics.GenericAPIView):
 				user = serializer.save()
 
 				return Response({
-					'user': UserSerializer(user).data,
-					'token': AuthToken.objects.create(user)[1]
+						'user': UserSerializer(user).data,
+						'token': AuthToken.objects.create(user)[1]
 				})
 
 
