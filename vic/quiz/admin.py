@@ -1,12 +1,13 @@
 from django.contrib import admin
 import nested_admin
 from .models import Quiz, Question, Answer, QuizTaker, UsersAnswer
+from . import models
 
 class AnswerInline(nested_admin.NestedTabularInline):
 		model = Answer
 		extra = 4
 		max_num = 4
-
+@admin.register(models.Question)
 class QuestionInline(nested_admin.NestedTabularInline):
 		model = Question
 		inlines = [AnswerInline,]
